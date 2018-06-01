@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+	int n;
+	scanf("%d", &n);
+	for(int i = 1; i <= n; i++){
+		int height, freq;
+		scanf("%d%d", &height, &freq);
+		for(int b = 1; b <= freq; b++){
+			for(int j = 1; j <= height; j++){
+				for(int a = 1; a <= j; a++) printf("%d", j);
+				puts("");	
+			}
+			for(int j = height - 1; j >= 1; j--){
+				for(int a = 1; a <= j; a++) printf("%d", j);
+				puts("");
+			}
+			i == n && b == freq ? 0: puts("");
+		}
+	}
+	
+	return 0;
+}
