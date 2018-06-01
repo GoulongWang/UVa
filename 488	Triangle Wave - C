@@ -1,22 +1,20 @@
 #include<stdio.h>
 int main(){
-	int n;
+	int n, height, freq;
 	scanf("%d", &n);
-	for(int i = 1; i <= n; i++){
-		int height, freq;
+	while(n--){
 		scanf("%d%d", &height, &freq);
-		for(int b = 1; b <= freq; b++){
+		for(int i = 1; i <= freq; i++){
 			for(int j = 1; j <= height; j++){
-				for(int a = 1; a <= j; a++) printf("%d", j);
+				for(int z = 1; z <= j; z++) printf("%d", j);
 				puts("");	
 			}
 			for(int j = height - 1; j >= 1; j--){
-				for(int a = 1; a <= j; a++) printf("%d", j);
+				for(int z = 1; z <= j; z++) printf("%d", j);
 				puts("");
 			}
-			i == n && b == freq ? 0: puts("");
+			n == 0 && i == freq ? 0: puts("");
 		}
 	}
-	
 	return 0;
 }
