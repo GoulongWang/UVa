@@ -1,12 +1,11 @@
 #include<stdio.h>
+#include<math.h>
 int main(){
 	unsigned hour, min;
-	char colon;
 
-	while(scanf("%u %c%u", &hour, &colon, &min) && (hour || min)){
-		double HD = hour * 30 + min * 0.5, MD = min * 6;
-		if (HD >= MD) printf("%.3f\n", HD - MD <= 180 ? HD - MD: 360 - HD + MD);
-		else printf("%.3f\n", MD - HD <= 180 ? MD - HD: 360 - MD + HD);
+	while(scanf("%u:%u", &hour, &min) && (hour || min)){
+		double HD = hour * 30 + min * 0.5, MD = min * 6, angle = fabs(HD - MD);
+		printf("%.3f\n", angle > 180? 360 - angle: angle);
 	}
 
 	return 0;
