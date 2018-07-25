@@ -1,15 +1,10 @@
 #include<iostream>
-#include<iomanip>
-using namespace std;
+#include<cstdio>
+#include<cmath>
 int main(){
 	unsigned hour, min;
-	char colon;
-
-	while(cin >> hour >> colon >> min && (hour || min)){
-		double HD = hour * 30 + min * 0.5, MD = min * 6;
-		if (HD >= MD) cout << setiosflags(ios::fixed) <<  setprecision(3) << (HD - MD <= 180 ? HD - MD: 360 - HD + MD) << endl;
-		else cout << setiosflags(ios::fixed) << setprecision(3) << (MD - HD <= 180 ? MD - HD: 360 - MD + HD) << endl;
+	while(scanf("%u:%u", &hour, &min) && (hour || min)){
+		double HD = hour * 30 + min * 0.5, MD = min * 6, angle = fabs(HD - MD);
+		printf("%.3f\n", angle > 180? 360 - angle: angle);
 	}
-	
-	return 0;
 }
