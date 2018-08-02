@@ -18,6 +18,4 @@ int main(){
 		}
 		cout << s << " -- is " << msg[2 * m + p] << ".\n\n";
 	}
-
-	return 0;
 }
